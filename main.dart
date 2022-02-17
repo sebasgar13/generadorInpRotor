@@ -26,7 +26,7 @@ void main(List<String> args){
       sink.close().then((value) => {
         File('template.inp').readAsString().then((String contents) {
           print(contents);
-          for(int i = 0; i < 12 ; i++){
+          for(int i = 0; i < 13 ; i++){
             var file2 = File('file-${i*30}.inp');
             var sink = file2.openWrite();
             sink.write('%chk=singleDAScanp-${i*30}.chk \n');
