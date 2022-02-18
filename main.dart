@@ -13,7 +13,7 @@ void main(List<String> args){
       var sink = file2.openWrite();
       int primeto = 1;
       await for (var line in lines) {
-        if(line.length > 3 && ((line[0]+line[1]+line[2]+line[3]) == args[1] || (line[0]+line[1]+line[2]+line[3]) == args[2] || (line[0]+line[1]+line[2]+line[3]) == args[3])){
+        if(line.length > 3 && ((line[0]+line[1]+line[2]+line[3]) == args[1] || (line[0]+line[1]+line[2]+line[3]) == args[2] || (line[0]+line[1]+line[2]+line[3]+line[4]) == args[3])){
           print("Encontrado");
         } else if(primeto == 1) {
           sink.write(line);
