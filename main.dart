@@ -26,14 +26,14 @@ void main(List<String> args){
       sink.close().then((value) => {
         File('template.inp').readAsString().then((String contents) {
           print(contents);
-          for(int i = 0; i < 13 ; i++){
-            var file2 = File('file-${i*30}.inp');
+          for(int i = 0; i <= 360 ; i+=10){
+            var file2 = File('file-${i}.inp');
             var sink = file2.openWrite();
-            sink.write('%chk=singleDAScanp-${i*30}.chk \n');
+            sink.write('%chk=singleDAScanp-${i}.chk \n');
             sink.write(contents);
-            sink.write('\n${args[2]}\t\t ${-240.0 + (i * 30)} \n');
-            sink.write('${args[3]}\t\t ${-120.0 + (i * 30)} \n \n');
-            sink.write('${args[1]}\t\t ${0.0 + (i * 30)} \n \n');
+            sink.write('\n\n${args[2]}\t\t ${-240.0 + i} \n');
+            sink.write('${args[3]}\t\t ${-120.0 + i} \n ');
+            sink.write('${args[1]}\t\t ${0.0 + i} \n \n');
             sink.close();
           }
         })
