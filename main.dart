@@ -11,9 +11,54 @@ void main(List<String> args){
     try {
       var file2 = File('template.inp');
       var sink = file2.openWrite();
+      String anguloFijo="", segundo="", tercero="", incremento="30";
       int primeto = 1;
+      int longitud = args.length;
+      //Encontramos los parametros de los ámgulos diedros en las entradas
+      for(int i = 0; i < longitud; i++){
+        String opcion = args[i];
+        int finalQ = opcion.length; 
+        if((opcion[0] + opcion[1]) == "ap" ){
+          anguloFijo = opcion[3];
+          for(int j = 4; j < finalQ; j++ ){
+            anguloFijo = anguloFijo + opcion[j];
+          }
+        } else if((opcion[0] + opcion[1]) == "as"){
+          segundo = opcion[3];
+          for(int j = 4; j < finalQ; j++ ){
+            segundo = segundo + opcion[j];
+          }
+        } else if((opcion[0] + opcion[1]) == "at"){
+          tercero = opcion[3];
+          for(int j = 4; j < finalQ; j++ ){
+            tercero = tercero + opcion[j];
+          }
+        } else if((opcion[0] + opcion[1]) == "in"){
+          incremento="";
+          for(int j = 3; j < finalQ; j++ ){
+            incremento = incremento + opcion[j];
+          }
+        }
+      }
+      //Leemos el template
       await for (var line in lines) {
-        if(line.length > 3 && ((line[0]+line[1]+line[2]+line[3]) == args[1] || (line[0]+line[1]+line[2]+line[3]+line[4]) == args[2] || (line[0]+line[1]+line[2]+line[3]+line[4]) == args[3])){
+        if(line.length > 9){
+          if((line[0]+line[1]) == 'di'){
+            String obtenerCaracter = "p", etiquetaAngulo= "";
+            int contadorCadena = 0;
+            while(obtenerCaracter != " "){
+              etiquetaAngulo = etiquetaAngulo + line[contadorCadena];
+              obtenerCaracter = line[contadorCadena+1];
+              contadorCadena++;
+            }
+            if(etiquetaAngulo == anguloFijo || etiquetaAngulo == segundo || etiquetaAngulo == tercero){
+              print("encontrado ${etiquetaAngulo}");
+            } else {
+              sink.write("\n$line");
+            }
+          } else {
+            sink.write("\n$line");
+          }
           print("Encontrado");
         } else if(primeto == 1) {
           sink.write(line);
@@ -26,14 +71,21 @@ void main(List<String> args){
       sink.close().then((value) => {
         File('template.inp').readAsString().then((String contents) {
           print(contents);
-          for(int i = 0; i <= 360 ; i+=10){
-            var file2 = File('file-${i}.inp');
+          for(int i = 0; i <= 360 ; i+=int.parse(incremento)){
+            var file2;
+            if(i<10){
+              file2 = File('file-00${i}.inp');
+            } else if(10 <= i && i < 100){
+              file2 = File('file-0${i}.inp');
+            } else {
+              file2 = File('file-${i}.inp');
+            }
             var sink = file2.openWrite();
             sink.write('%chk=singleDAScanp-${i}.chk \n');
             sink.write(contents);
-            sink.write('\n\n${args[2]}\t\t ${-240.0 + i} \n');
-            sink.write('${args[3]}\t\t ${-120.0 + i} \n ');
-            sink.write('${args[1]}\t\t ${0.0 + i} \n \n');
+            sink.write('\n${segundo}\t\t ${-120.0 + i} \n');
+            sink.write('${tercero}\t\t ${-240.0 + i} \n\n');
+            sink.write('${anguloFijo}\t\t ${0.0 + i} \n \n');
             sink.close();
           }
         })
