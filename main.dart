@@ -85,7 +85,7 @@ void main(List<String> args){
             sink.write(contents);
             sink.write('\n${segundo}\t\t ${-120.0 + i} \n');
             sink.write('${tercero}\t\t ${-240.0 + i} \n\n');
-            sink.write('${anguloFijo}\t\t ${0.0 + i} \n \n');
+            sink.write('${anguloFijo}\t\t ${0.0 + i} \n \n \n');
             sink.close();
           }
         })

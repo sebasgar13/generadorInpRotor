@@ -1,3 +1,10 @@
+%mem=30GB
+%nproc=4
+#B3LYP/6-31g(d) opt=z-mat GFInput IOP(6/7=3) test
+
+Scan of dihedral angle.
+
+0 2
 c
  c   1 cc2     
  c    2 cc3         1 ccc3      
@@ -17,11 +24,13 @@ cc3         1.542749
 ccc3        115.684
 clc4        1.837073
 clcc4       109.502
+dih4        -62.641
 clc5        1.735347
 clcc5       119.103
 dih5        -73.731
 cc6         1.522494
 ccc6        112.860
+dih6        175.325
 hc7         1.093288
 hcc7        110.984
 dih7        179.228
@@ -33,6 +42,7 @@ hcc9        111.062
 dih9         58.552
 hc10        1.092391
 hcc10       109.626
+dih10        51.330
 hc11        1.099465
 hcc11       109.562
 dih11        46.924
@@ -42,7 +52,3 @@ dih12       163.913
 hc13        1.082715
 hcc13       123.059
 dih13        83.391
-dih10		 -120.0 
-dih4		 -240.0 
-dih6		 0.0 
- 
