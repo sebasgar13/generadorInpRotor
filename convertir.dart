@@ -16,7 +16,7 @@ void main(List<String> args) {
       sink.write("#Archivo \t ángulo \t hartree \t kCal/mol \t Energia Rel \n");
       await for (var line in lines) {
         if(primeto){
-          sink.write("$line \t ${contador * 30.0} \t");
+          sink.write("$line \t ${contador * 15.0} \t");
           primeto = !primeto;
           contador += 1;
         } else {
