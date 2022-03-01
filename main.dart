@@ -52,14 +52,13 @@ void main(List<String> args){
               contadorCadena++;
             }
             if(etiquetaAngulo == anguloFijo || etiquetaAngulo == segundo || etiquetaAngulo == tercero){
-              print("encontrado ${etiquetaAngulo}");
+              contadorCadena=0;
             } else {
               sink.write("\n$line");
             }
           } else {
             sink.write("\n$line");
           }
-          print("Encontrado");
         } else if(primeto == 1) {
           sink.write(line);
           primeto += 1;
@@ -70,7 +69,7 @@ void main(List<String> args){
       //Cuando se cierra el archivo esperamos que se escriba y lo utilizamos como template para escribir los otrso archivos
       sink.close().then((value) => {
         File('template.inp').readAsString().then((String contents) {
-          print(contents);
+          //print(contents);
           for(int i = 0; i <= 360 ; i+=int.parse(incremento)){
             var file2;
             if(i<10){
