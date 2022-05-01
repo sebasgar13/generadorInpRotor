@@ -1,6 +1,6 @@
 %mem=30GB
-%nproc=4
-#B3LYP/6-311g(2d,d,p) opt=z-mat GFInput IOP(6/7=3) test
+%nproc=8
+#B3LYP/6-311g(2d,d,p) opt=z-mat GFInput IOP(6/7=3) test freq
 
 Scan of dihedral angle.
 

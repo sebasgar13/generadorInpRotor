@@ -1,0 +1,23 @@
+ c
+ n   1 nc2     
+ h    2 hn3         1 hnc3      
+ h    1 hc4         2 hcn4          3 dih4   
+ h    1 hc5         2 hcn5          3 dih5   
+ h    1 hc6         2 hcn6          3 dih6   
+ h    2 hn7         1 hnc7          4 dih7   
+ 
+nc2         1.466332
+hn3         1.014933
+hnc3        110.031
+hc4         1.093164
+hcn4        109.242
+dih4        179.996
+hc5         1.101674
+hcn5        115.543
+dih5        -58.354
+hc6         1.093247
+hcn6        109.270
+dih6         63.308
+hn7         1.014968
+hnc7        110.060
+dih7        -63.175 

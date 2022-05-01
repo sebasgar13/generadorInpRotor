@@ -1,0 +1,54 @@
+%mem=30GB
+%nproc=12
+#HF/6-311g(2d,d,p) opt=z-mat GFInput IOP(6/7=3) test freq
+
+Scan of dihedral angle.
+
+0 2
+c
+ c   1 cc2     
+ c    2 cc3         1 ccc3      
+cl    3 clc4        2 clcc4         1 dih4   
+cl    1 clc5        2 clcc5         3 dih5   
+ c    3 cc6         2 ccc6          1 dih6   
+ h    6 hc7         3 hcc7          2 dih7   
+ h    6 hc8         3 hcc8          2 dih8   
+ h    6 hc9         3 hcc9          2 dih9   
+ h    2 hc10        1 hcc10         5 dih10  
+ h    2 hc11        1 hcc11         5 dih11  
+ h    1 hc12        2 hcc12         3 dih12  
+ h    3 hc13        1 hcc13        11 dih13  
+ 
+cc2         1.496757
+cc3         1.533021
+ccc3        116.248
+clc4        1.812452
+clcc4       110.292
+dih4       -294.502
+clc5        1.722049
+clcc5       120.750
+dih5       -108.373
+cc6         1.519787
+ccc6        114.734
+dih6        -58.583
+hc7         1.082844
+hcc7        110.478
+dih7        183.977
+hc8         1.087220
+hcc8        109.481
+dih8        -56.696
+hc9         1.083331
+hcc9        111.518
+dih9         63.685
+hc10        1.082132
+hcc10       109.343
+dih10        15.734
+hc11        1.090318
+hcc11       108.290
+dih11       132.145
+hc12        1.070862
+hcc12       123.911
+dih12        59.769
+hc13        1.080212
+hcc13       139.351
+dih13       -34.356 

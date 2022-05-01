@@ -80,10 +80,15 @@ void main(List<String> args){
               file2 = File('file-${i}.inp');
             }
             var sink = file2.openWrite();
+            sink.write('%nprocshared=4 \n');
+            sink.write('%mem=30gb \n');
+            sink.write('%NoSave \n');
             sink.write('%chk=singleDAScanp-${i}.chk \n');
+            sink.write('#MaxDisk=2600gb \n');
+            sink.write('#B3LyP/6-311g(2d,d,p) fopt freq gfinput iop(6/7=3) test \n \n Comentario \n \n 0 1 \n');
             sink.write(contents);
-            sink.write('\n${segundo}\t\t ${-120.0 + i} \n');
-            sink.write('${tercero}\t\t ${-240.0 + i} \n\n');
+//            sink.write('\n${segundo}\t\t ${-240.0 + i} \n');
+            sink.write('\n${segundo}\t\t ${-120.0 + i} \n\n');
             sink.write('${anguloFijo}\t\t ${0.0 + i} \n \n \n');
             sink.close();
           }

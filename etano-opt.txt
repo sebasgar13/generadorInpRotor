@@ -1,0 +1,27 @@
+ c
+ c   1 cc2     
+ h    1 hc3         2 hcc3      
+ h    1 hc4         3 hch4          2 dih4   
+ h    1 hc5         4 hch5          3 dih5   
+ h    2 hc6         1 hcc6          3 dih6   
+ h    2 hc7         1 hcc7          3 dih7   
+ h    2 hc8         1 hcc8          3 dih8   
+ 
+cc2         1.530816
+hc3         1.093575
+hcc3        111.329
+hc4         1.093576
+hch4        107.551
+dih4        122.210
+hc5         1.093576
+hch5        107.551
+dih5       -115.579
+hc6         1.093575
+hcc6        111.329
+dih6        180.000
+hc7         1.093576
+hcc7        111.329
+dih7        -60.000
+hc8         1.093576
+hcc8        111.329
+dih8         60.000 

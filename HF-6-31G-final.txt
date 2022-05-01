@@ -1,6 +1,6 @@
 %mem=30GB
 %nproc=12
-#HF/6-31g(d) opt=z-mat GFInput IOP(6/7=3) test
+#HF/6-31g(d) opt=z-mat GFInput IOP(6/7=3) test freq
 
 Scan of dihedral angle.
 
